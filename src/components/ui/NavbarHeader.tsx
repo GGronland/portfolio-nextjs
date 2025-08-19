@@ -31,7 +31,13 @@ const NavbarHeader = () => {
   return (
     <div className="sticky top-0 flex justify-between items-center h-16 px-8 shadow-lg bg-gray-800">
       <div>
-        <Image src="/logo.png" alt="Logo" width={40} height={40} />
+        <Image
+          src="/logo.png"
+          alt="Logo"
+          width={40}
+          height={40}
+          onMouseEnter={() => {}}
+        />
       </div>
       <nav className="flex space-x-8">
         {navLinks.map((link) => {
@@ -41,7 +47,7 @@ const NavbarHeader = () => {
             <Link
               key={link.name}
               className={
-                "group font-semibold cursor-pointer transition-all duration-800 hover:text-green-300 " +
+                "group font-semibold cursor-pointer no-underline transition-all duration-800 hover:text-green-300 " +
                 (pathName === link.href ? " text-green-300" : "")
               }
               href={link.href}
