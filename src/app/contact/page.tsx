@@ -15,7 +15,7 @@ const ContactPage = () => {
 
   const handleEmailClick = () => {
     navigator.clipboard.writeText(emailAddress);
-    setTooltipText("Copied to clipboard!");
+    setTooltipText("Copied!");
     setTimeout(() => {
       setTooltipText(tooltipTextDefault);
     }, 2000);
@@ -30,7 +30,14 @@ const ContactPage = () => {
           <span className="text-sm font-semibold mb-2 text-center">
             Email me at:
             <br />
-            {emailAddress}
+            <Tooltip tooltipText={tooltipText}>
+              <a
+                className="underline cursor-pointer"
+                onClick={handleEmailClick}
+              >
+                {emailAddress}
+              </a>
+            </Tooltip>
             <br />
             or click below to open your email app.
           </span>
