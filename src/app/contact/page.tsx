@@ -23,7 +23,7 @@ const ContactPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-4xl font-bold mb-4">Want to get in touch?</h1>
+      <h1 className="text-4xl font-bold mb-4">Want to connect?</h1>
 
       <div className="flex justify-space-between items-center gap-8 mt-8">
         <div className="p-4 flex flex-col  h-36 justify-center items-center border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg ">
@@ -52,7 +52,7 @@ const ContactPage = () => {
           target="_blank"
         >
           <LinkedInLogo className="w-12 h-12 mb-2 fill-green-300 " />
-          <h2 className="text-xl font-semibold mb-2">LinkedIn</h2>
+          <h2 className="">LinkedIn</h2>
         </Link>
 
         <Link
@@ -61,7 +61,7 @@ const ContactPage = () => {
           target="_blank"
         >
           <GitHubLogo className="w-12 h-12 mb-2 stroke-green-300 stroke-4" />
-          <h2 className="text-xl font-semibold mb-2">GitHub</h2>
+          <h2 className="">GitHub</h2>
         </Link>
       </div>
     </div>
