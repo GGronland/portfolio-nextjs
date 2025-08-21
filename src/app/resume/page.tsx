@@ -1,7 +1,8 @@
 "use client";
 
-import ResumeExperience from "@/components/features/ResumeExperience";
 import Button from "@/components/ui/Button";
+import ResumeExperience from "@/components/features/ResumeExperience";
+import SkillIconList from "@/components/ui/SkillBlockIcon";
 import { educationData, experienceData } from "@/data/resumeData";
 import { useState } from "react";
 
@@ -51,6 +52,7 @@ const ResumePage = () => {
               viewResetTrigger={viewResetTrigger}
             />
           )}
+
           {activeSection === "education" && (
             <ResumeExperience
               title="Education"
@@ -59,7 +61,7 @@ const ResumePage = () => {
             />
           )}
 
-          {activeSection === "skills" && ""}
+          {activeSection === "skills" && <SkillIconList />}
         </div>
       </section>
     </div>
