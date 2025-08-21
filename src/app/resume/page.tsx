@@ -32,7 +32,7 @@ const ResumePage = () => {
       <hr className="my-4 w-4/5 border-t border-gray-600" />
 
       <section className="w-4/5 flex justify-start gap-8 mt-8">
-        <div className="w-60 flex flex-col items-center gap-4">
+        <div className="w-50 flex flex-col items-center gap-4">
           <Button onClick={() => handleSectionChange("experience")}>
             Experience
           </Button>
@@ -42,25 +42,14 @@ const ResumePage = () => {
           <Button onClick={() => handleSectionChange("skills")}>Skills</Button>
         </div>
 
-        {activeSection === "experience" && (
-          <div className="w-full">
+        <div className="flex-1">
+          {activeSection === "experience" && (
             <ResumeExperience viewResetTrigger={viewResetTrigger} />
-          </div>
-        )}
+          )}
+          {activeSection === "education" && ""}
 
-        {activeSection === "education" && (
-          <div className="">
-            <h3 className="text-xl font-semibold">Education Section</h3>
-            {/* Education content goes here */}
-          </div>
-        )}
-
-        {activeSection === "skills" && (
-          <div className="">
-            <h3 className="text-xl font-semibold">Skills Section</h3>
-            {/* Skills content goes here */}
-          </div>
-        )}
+          {activeSection === "skills" && ""}
+        </div>
       </section>
     </div>
   );

@@ -42,7 +42,7 @@ const ResumeExperience = ({ viewResetTrigger }: ResumeExperienceProps) => {
 
       {/* Render all experience cards if no experience is active */}
       {!activeExperienceData && (
-        <div className="w-full grid grid-cols-2 gap-4 animate-fade-in ">
+        <div className="w-full flex flex-wrap gap-4 animate-fade-in ">
           {experienceData.map((experience, idx: number) => (
             <ExperienceCard
               key={`experience-${experience.id}`}

@@ -13,7 +13,7 @@ const ExperienceCard = ({
 }: CardExperienceProps) => {
   return (
     <div
-      className="min-w-60 h-38 p-5 flex flex-col justify-start gap-2 border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg cursor-pointer hover:scale-105 transition-all duration-500"
+      className="flex-[1_1_200px] h-38 p-5 flex flex-col justify-start gap-2 border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg cursor-pointer hover:scale-105 transition-all duration-500"
       onClick={onClick}
     >
       <div className="flex items-center gap-2">
