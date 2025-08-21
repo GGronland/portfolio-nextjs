@@ -2,6 +2,7 @@
 
 import ResumeExperience from "@/components/features/ResumeExperience";
 import Button from "@/components/ui/Button";
+import { educationData, experienceData } from "@/data/resumeData";
 import { useState } from "react";
 
 type ResumeSections = "experience" | "education" | "skills";
@@ -44,9 +45,19 @@ const ResumePage = () => {
 
         <div className="flex-1">
           {activeSection === "experience" && (
-            <ResumeExperience viewResetTrigger={viewResetTrigger} />
+            <ResumeExperience
+              title="Experience"
+              data={experienceData}
+              viewResetTrigger={viewResetTrigger}
+            />
           )}
-          {activeSection === "education" && ""}
+          {activeSection === "education" && (
+            <ResumeExperience
+              title="Education"
+              data={educationData}
+              viewResetTrigger={viewResetTrigger}
+            />
+          )}
 
           {activeSection === "skills" && ""}
         </div>

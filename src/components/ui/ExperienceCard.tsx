@@ -2,6 +2,7 @@ type CardExperienceProps = {
   title: string;
   location: string;
   date: string;
+  additionalInfo?: string;
   onClick?: () => void;
 };
 
@@ -9,11 +10,12 @@ const ExperienceCard = ({
   title,
   location,
   date,
+  additionalInfo,
   onClick,
 }: CardExperienceProps) => {
   return (
     <div
-      className="flex-[1_1_200px] h-38 p-5 flex flex-col justify-start gap-2 border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg cursor-pointer hover:scale-105 transition-all duration-500"
+      className="min-w-[300px] h-38 p-5 flex flex-col justify-start gap-2 border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg cursor-pointer hover:scale-105 transition-all duration-500"
       onClick={onClick}
     >
       <div className="flex items-center gap-2">
@@ -23,7 +25,7 @@ const ExperienceCard = ({
 
       <span className="text-md flex-1">{title}</span>
 
-      <div className="mt-auto"></div>
+      {additionalInfo && <div className="mt-auto">{additionalInfo}</div>}
     </div>
   );
 };
