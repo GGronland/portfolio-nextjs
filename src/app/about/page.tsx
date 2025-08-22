@@ -3,7 +3,7 @@ import ProfilePicture from "@/assets/profilePicture.jpg";
 
 const AboutPage = () => {
   return (
-    <div className="flex flex-1 flex-col lg:flex-row justify-between gap-12 lg:gap-26 px-20 animate-fade-in-slow">
+    <div className="flex h-max flex-col lg:flex-row justify-between gap-12 lg:gap-26 px-20 animate-fade-in-slow">
       <div className="text-gray-300">
         <h1 className="mb-4">A little bit about me...</h1>
 
@@ -50,13 +50,16 @@ const AboutPage = () => {
         </p>
       </div>
 
-      <Image
-        className="m-auto border-1 max-h-[300px] p-1 rounded-xl border-slate-700 bg-slate-700 drop-shadow-lg hover:animate-pulse"
-        src={ProfilePicture}
-        alt="Picture of Glen Gronland"
-        width={300}
-        height={300}
-      />
+      <div className="relative m-auto max-w-[300px] rotate-6 rounded-xl hover:rotate-0 transition-all duration-500">
+        <Image
+          className="box-border border-5 rounded-xl border-slate-700 bg-slate-700 drop-shadow-lg "
+          src={ProfilePicture}
+          alt="Profile picture"
+        />
+
+        {/* For potential "stack" effect - needs container for relative positioning */}
+        {/* <div className="absolute -z-1 top-0 w-full h-full -rotate-6 box-border border-4 rounded-xl border-slate-700 bg-amber-200" /> */}
+      </div>
     </div>
   );
 };
