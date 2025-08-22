@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
 
   --animate-fade-in: fade-in 0.5s ease-in-out;
+  --animate-fade-in-slow: fade-in 1s ease-in-out;
 
   @keyframes fade-in {
     from {
@@ -24,14 +25,25 @@
 }
 
 @layer base {
-  h2,
-  h3 {
-    font-weight: 600; /* font-semibold */
+  h1 {
+    font-size: 2rem;
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem;
+    color: white;
   }
 
   h2 {
     font-size: 1.25rem; /* text-xl */
     margin-bottom: 0.5rem; /* mb-2 */
+  }
+
+  h2,
+  h3 {
+    font-weight: 600; /* font-semibold */
+  }
+
+  p:not(:last-child) {
+    margin-bottom: 0.5rem;
   }
 }
 

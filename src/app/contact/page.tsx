@@ -23,7 +23,7 @@ const ContactPage = () => {
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center">
-      <h1 className="text-4xl font-bold mb-4">Want to connect?</h1>
+      <h1 className="">Want to connect?</h1>
 
       <div className="flex justify-space-between items-center gap-8 mt-8">
         <div className="p-4 flex flex-col  h-36 justify-center items-center border-1 rounded-xl border-sky-950 bg-sky-900 drop-shadow-lg ">
