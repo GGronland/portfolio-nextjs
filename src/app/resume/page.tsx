@@ -9,8 +9,7 @@ import { useState } from "react";
 type ResumeSections = "experience" | "education" | "skills";
 
 const ResumePage = () => {
-  const [activeSection, setActiveSection] =
-    useState<ResumeSections>("experience");
+  const [activeSection, setActiveSection] = useState<ResumeSections>("skills");
   const [viewResetTrigger, setViewResetTrigger] = useState(0);
 
   const handleSectionChange = (section: ResumeSections) => {
@@ -19,7 +18,7 @@ const ResumePage = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen">
+    <div className="flex flex-1 flex-col items-center justify-start">
       <h2>
         In a hurry, or just want the downloadable version? Grab a copy of my{" "}
         <a
@@ -38,6 +37,14 @@ const ResumePage = () => {
           <Button
             className=""
             bgColour="bg-emerald-500"
+            onClick={() => handleSectionChange("skills")}
+          >
+            Skills
+          </Button>
+
+          <Button
+            className=""
+            bgColour="bg-emerald-500"
             onClick={() => handleSectionChange("experience")}
           >
             Experience
@@ -49,16 +56,11 @@ const ResumePage = () => {
           >
             Education
           </Button>
-          <Button
-            className=""
-            bgColour="bg-emerald-500"
-            onClick={() => handleSectionChange("skills")}
-          >
-            Skills
-          </Button>
         </div>
 
         <div className="flex-1">
+          {activeSection === "skills" && <SkillIconList />}
+
           {activeSection === "experience" && (
             <ResumeExperience
               title="Experience"
@@ -74,8 +76,6 @@ const ResumePage = () => {
               viewResetTrigger={viewResetTrigger}
             />
           )}
-
-          {activeSection === "skills" && <SkillIconList />}
         </div>
       </section>
     </div>

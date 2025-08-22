@@ -17,51 +17,73 @@ const SkillIconList = ({}: {}) => {
     "absolute translate-y-[100px] font-semibold group-hover:-translate-y-[0px] transition-all duration-500";
 
   return (
-    <div className="flex flex-wrap gap-4">
-      <div className={iconBoxStylings}>
-        <HTML5Logo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>HTML5</span>
-      </div>
+    <div>
+      <header className="flex items-center justify-between mb-2">
+        <h2 className="text-xl font-semibold">{"\u21B3"} Skills</h2>
+      </header>
 
-      <div className={iconBoxStylings}>
-        <CSS3Logo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>CSS3</span>
-      </div>
+      <article>
+        <h3 className="mb-2">Frontend</h3>
 
-      <div className={iconBoxStylings}>
-        <SCSSLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>SCSS</span>
-      </div>
+        <div className="flex flex-wrap gap-4">
+          <div className={iconBoxStylings}>
+            <HTML5Logo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>HTML5</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <TailwindCSSLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>Tailwind</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <CSS3Logo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>CSS3</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <JavascriptLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>JavaScript</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <SCSSLogo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>SCSS</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <ReactLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>React</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <TailwindCSSLogo
+              width={50}
+              height={50}
+              className={iconLogoStylings}
+            />
+            <span className={iconTextStylings}>Tailwind</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <NextJSLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>Next.js</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <JavascriptLogo
+              width={50}
+              height={50}
+              className={iconLogoStylings}
+            />
+            <span className={iconTextStylings}>JavaScript</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <TypescriptLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>TypeScript</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <ReactLogo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>React</span>
+          </div>
 
-      <div className={iconBoxStylings}>
-        <ReduxLogo width={50} height={50} className={iconLogoStylings} />
-        <span className={iconTextStylings}>Redux</span>
-      </div>
+          <div className={iconBoxStylings}>
+            <NextJSLogo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>Next.js</span>
+          </div>
+
+          <div className={iconBoxStylings}>
+            <TypescriptLogo
+              width={50}
+              height={50}
+              className={iconLogoStylings}
+            />
+            <span className={iconTextStylings}>TypeScript</span>
+          </div>
+
+          <div className={iconBoxStylings}>
+            <ReduxLogo width={50} height={50} className={iconLogoStylings} />
+            <span className={iconTextStylings}>Redux</span>
+          </div>
+        </div>
+      </article>
     </div>
   );
 };

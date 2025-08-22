@@ -26,10 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-[100vh] flex flex-col`}
       >
         <NavbarHeader />
-        <main className="overflow-hidden p-8">{children}</main>
+        <main className="flex flex-1 overflow-hidden p-8">{children}</main>
       </body>
     </html>
   );
