@@ -2,7 +2,7 @@
 
 import Button from "@/components/ui/Button";
 import ResumeExperience from "@/components/features/ResumeExperience";
-import SkillIconList from "@/components/ui/SkillBlockIcon";
+import SkillIconList from "@/components/features/SkillIconList";
 import { educationData, experienceData } from "@/data/resumeData";
 import { useState } from "react";
 
@@ -35,13 +35,27 @@ const ResumePage = () => {
 
       <section className="w-4/5 flex justify-start gap-8 mt-8">
         <div className="w-50 flex flex-col items-center gap-4">
-          <Button onClick={() => handleSectionChange("experience")}>
+          <Button
+            className=""
+            bgColour="bg-emerald-500"
+            onClick={() => handleSectionChange("experience")}
+          >
             Experience
           </Button>
-          <Button onClick={() => handleSectionChange("education")}>
+          <Button
+            className=""
+            bgColour="bg-emerald-500"
+            onClick={() => handleSectionChange("education")}
+          >
             Education
           </Button>
-          <Button onClick={() => handleSectionChange("skills")}>Skills</Button>
+          <Button
+            className=""
+            bgColour="bg-emerald-500"
+            onClick={() => handleSectionChange("skills")}
+          >
+            Skills
+          </Button>
         </div>
 
         <div className="flex-1">

@@ -42,7 +42,9 @@ const ContactPage = () => {
             or click below to open your email app.
           </span>
           <Link href={`mailto:${emailAddress}`}>
-            <Button className="">Say hello!</Button>
+            <Button className="" isCTA>
+              Say hello!
+            </Button>
           </Link>
         </div>
 
