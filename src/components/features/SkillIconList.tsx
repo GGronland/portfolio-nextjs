@@ -17,12 +17,12 @@ const SkillIconList = ({}: {}) => {
     "absolute translate-y-[100px] font-semibold group-hover:-translate-y-[0px] transition-all duration-500";
 
   return (
-    <div>
+    <>
       <header className="flex items-center justify-between mb-2">
         <h2 className="text-xl font-semibold">{"\u21B3"} Skills</h2>
       </header>
 
-      <article>
+      <article className="animate-fade-in">
         <h3 className="mb-2">Frontend</h3>
 
         <div className="flex flex-wrap gap-4">
@@ -84,7 +84,7 @@ const SkillIconList = ({}: {}) => {
           </div>
         </div>
       </article>
-    </div>
+    </>
   );
 };
 
