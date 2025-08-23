@@ -18,7 +18,7 @@ const ResumePage = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-start">
+    <div className="flex flex-1 flex-col items-center justify-start px-8">
       <h2>
         In a hurry, or just want the downloadable version? Grab a copy of my{" "}
         <a
@@ -30,9 +30,9 @@ const ResumePage = () => {
         </a>
       </h2>
 
-      <hr className="my-4 w-4/5 border-t border-gray-600" />
+      <hr className="my-4 w-full border-t border-gray-600" />
 
-      <section className="w-4/5 flex justify-start gap-8 mt-8">
+      <section className="w-full flex justify-start gap-8 mt-8">
         <div className="w-50 flex flex-col items-center gap-4">
           <Button
             className=""

@@ -3,7 +3,7 @@ import ProfilePicture from "@/assets/profilePicture.jpg";
 
 const AboutPage = () => {
   return (
-    <div className="flex h-max flex-col lg:flex-row justify-between gap-12 lg:gap-26 px-20 animate-fade-in-slow">
+    <div className="flex h-max flex-col lg:flex-row justify-between gap-12 lg:gap-26 px-8 animate-fade-in-slow">
       <div className="text-gray-300">
         <h1 className="mb-4">A little bit about me...</h1>
 
