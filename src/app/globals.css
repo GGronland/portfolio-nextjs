@@ -20,6 +20,8 @@ body {
 
   --animate-fade-in: fade-in 0.5s ease-in-out;
   --animate-fade-in-slow: fade-in 1s ease-in-out;
+  --animate-fade-in-top: fade-in-top 1s ease-in-out;
+  --animate-fade-out: fade-out 0.5 ease-in-out;
 
   @keyframes fade-in {
     from {
@@ -27,6 +29,26 @@ body {
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @keyframes fade-in-top {
+    from {
+      opacity: 0;
+      top: -20px;
+    }
+    to {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
     }
   }
 }

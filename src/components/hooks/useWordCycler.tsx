@@ -4,9 +4,14 @@ import { useEffect, useState } from "react";
 
 type ArrayWithMinLength<T> = [T, T, ...T[]];
 
+// An exercise in manual CSS animations
+// For simplicity, consider pre-existing libraries such as react-spring
+
 const useWordCycler = (
   wordList: ArrayWithMinLength<string>,
-  cycleDelayMS: number = 5000
+  cycleDelayMS: number = 5000,
+  classname: string = "",
+  fullStop?: boolean
 ) => {
   const [listIndex, setListIndex] = useState<number>(0);
 
@@ -27,15 +32,20 @@ const useWordCycler = (
   };
 
   const cycleNewWord = () => {
-    const newIndex = getNextIndex(listIndex);
-
-    setListIndex(newIndex);
+    setListIndex((prev) => getNextIndex(prev));
   };
 
-  return {
-    currentWord: processedList[listIndex],
-    nextWord: processedList[getNextIndex(listIndex)],
-  };
+  if (classname) {
+    return (
+      <span
+        key={`wordCycle_${processedList[listIndex]}`}
+        className={`${classname} relative`}
+      >
+        {processedList[listIndex]}
+        {fullStop ? "." : ""}
+      </span>
+    );
+  } else return processedList[listIndex];
 };
 
 export default useWordCycler;
