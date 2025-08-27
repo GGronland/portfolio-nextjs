@@ -22,7 +22,7 @@ const ResumePage = () => {
       <h2>
         In a hurry, or just want the downloadable version? Grab a copy of my{" "}
         <a
-          href="/assets/CV_GlenGronland.pdf"
+          href="/assets/files/CV_GlenGronland.pdf"
           download
           className="underline text-green-300"
         >
@@ -35,7 +35,7 @@ const ResumePage = () => {
       <section className="w-full flex justify-start gap-8 mt-8">
         <div className="w-50 flex flex-col items-center gap-4">
           <Button
-            className=""
+            className="w-full"
             bgColour="bg-emerald-500"
             onClick={() => handleSectionChange("skills")}
           >
@@ -43,14 +43,14 @@ const ResumePage = () => {
           </Button>
 
           <Button
-            className=""
+            className="w-full"
             bgColour="bg-emerald-500"
             onClick={() => handleSectionChange("experience")}
           >
             Experience
           </Button>
           <Button
-            className=""
+            className="w-full"
             bgColour="bg-emerald-500"
             onClick={() => handleSectionChange("education")}
           >

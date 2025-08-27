@@ -16,7 +16,7 @@ const Button = ({
     <button
       className={`${className} ${
         isCTA ? "bg-orange-400" : bgColour
-      } w-full min-w-min h-10 px-4 py-2 rounded-md cursor-pointer text-sm font-semibold  hover:opacity-80`}
+      } flex justify-center items-center gap-2 min-w-min h-10 px-4 py-2 rounded-md cursor-pointer text-sm font-semibold  hover:opacity-80`}
       onClick={onClick}
       {...props}
     >
