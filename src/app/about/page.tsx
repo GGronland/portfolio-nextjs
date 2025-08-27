@@ -35,7 +35,7 @@ const AboutPage = () => {
         </p>
 
         <p>
-          Now, I leverage my passion for detail to build fluid user interfaces
+          Now, I leverage my passion for detail to build smooth user interfaces
           and aptitude for learning to pick up and utilise new technologies.
           With experience across the full SDLC lifecycle and deploying
           large-scale features to production, I think of the bigger picture -
