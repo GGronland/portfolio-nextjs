@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Bars3BottomRightIcon,
   BeakerIcon,
@@ -12,6 +12,7 @@ import {
   IdentificationIcon,
 } from "@heroicons/react/24/outline";
 import NavSideMenu from "./NavSideMenu";
+import path from "path";
 
 type Link = {
   name: string;
@@ -19,7 +20,7 @@ type Link = {
   icon?: React.ComponentType<{ className?: string }>;
 };
 
-const NavLinkList = ({}) => {
+const NavLinkList = ({ showBurgerMenu = true, isMobileView = false }) => {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
 
   const navLinks: Link[] = [
@@ -32,13 +33,23 @@ const NavLinkList = ({}) => {
 
   const pathName = usePathname();
 
+  useEffect(() => {
+    setIsSideMenuOpen(false); // Ensure side menu is closed on page change
+  }, [pathName]);
+
   const toggleSideNavMenu = () => {
     setIsSideMenuOpen((prev) => !prev);
   };
 
   return (
     <nav>
-      <div className="hidden md:flex space-x-8">
+      <div
+        className={
+          isMobileView
+            ? "flex flex-col items-center gap-4"
+            : "hidden md:flex space-x-8"
+        }
+      >
         {navLinks.map((link) => {
           const LinkIcon = link.icon;
 
@@ -46,12 +57,16 @@ const NavLinkList = ({}) => {
             <Link
               key={link.name}
               className={
-                "group font-semibold cursor-pointer no-underline transition-all duration-800 hover:text-green-300 " +
+                "group w-min font-semibold cursor-pointer no-underline transition-all duration-800 hover:text-green-300 " +
                 (pathName === link.href ? " text-green-300" : "")
               }
               href={link.href}
             >
-              <div className="flex items-center gap-1.5 py-1">
+              <div
+                className={`flex items-center gap-1.5 py-1 ${
+                  isMobileView ? "text-lg" : ""
+                }`}
+              >
                 {LinkIcon && <LinkIcon className="w-6" />}
                 {link.name}
               </div>
@@ -67,15 +82,18 @@ const NavLinkList = ({}) => {
         })}
       </div>
 
-      <Bars3BottomRightIcon
-        className="w-8 md:hidden hover:cursor-pointer hover:stroke-green-300 transition-all duration-300"
-        onClick={toggleSideNavMenu}
-      />
-
-      <NavSideMenu
-        isSideMenuOpen={isSideMenuOpen}
-        toggleSideNavMenu={toggleSideNavMenu}
-      />
+      {showBurgerMenu && (
+        <>
+          <Bars3BottomRightIcon
+            className="w-8 md:hidden hover:cursor-pointer hover:stroke-green-300 transition-all duration-300"
+            onClick={toggleSideNavMenu}
+          />
+          <NavSideMenu
+            isSideMenuOpen={isSideMenuOpen}
+            toggleSideNavMenu={toggleSideNavMenu}
+          />
+        </>
+      )}
     </nav>
   );
 };
