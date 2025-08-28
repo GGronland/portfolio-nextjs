@@ -1,15 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 import {
+  Bars3BottomRightIcon,
   BeakerIcon,
   DocumentTextIcon,
   EnvelopeIcon,
   HomeIcon,
   IdentificationIcon,
 } from "@heroicons/react/24/outline";
-import { usePathname } from "next/navigation";
+import NavSideMenu from "./NavSideMenu";
 
 type Link = {
   name: string;
@@ -17,7 +19,9 @@ type Link = {
   icon?: React.ComponentType<{ className?: string }>;
 };
 
-const NavbarHeader = () => {
+const NavLinkList = ({}) => {
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState<boolean>(false);
+
   const navLinks: Link[] = [
     { name: "Home", href: "/", icon: HomeIcon },
     { name: "About", href: "/about", icon: IdentificationIcon },
@@ -28,18 +32,13 @@ const NavbarHeader = () => {
 
   const pathName = usePathname();
 
+  const toggleSideNavMenu = () => {
+    setIsSideMenuOpen((prev) => !prev);
+  };
+
   return (
-    <div className="sticky top-0 z-1 flex justify-between items-center h-16 px-8 shadow-lg bg-gray-800">
-      <div>
-        <Image
-          src="/logo.png"
-          alt="Logo"
-          width={40}
-          height={40}
-          onMouseEnter={() => {}}
-        />
-      </div>
-      <nav className="flex space-x-8">
+    <nav>
+      <div className="hidden md:flex space-x-8">
         {navLinks.map((link) => {
           const LinkIcon = link.icon;
 
@@ -66,9 +65,19 @@ const NavbarHeader = () => {
             </Link>
           );
         })}
-      </nav>
-    </div>
+      </div>
+
+      <Bars3BottomRightIcon
+        className="w-8 md:hidden hover:cursor-pointer hover:stroke-green-300 transition-all duration-300"
+        onClick={toggleSideNavMenu}
+      />
+
+      <NavSideMenu
+        isSideMenuOpen={isSideMenuOpen}
+        toggleSideNavMenu={toggleSideNavMenu}
+      />
+    </nav>
   );
 };
 
-export default NavbarHeader;
+export default NavLinkList;
