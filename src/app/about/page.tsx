@@ -1,5 +1,5 @@
-import Image from "next/image";
-import ProfilePicture from "@/assets/profilePicture.jpg";
+import Accordion, { AccordionItem } from "@/components/ui/Accordion";
+import { qaData } from "@/data/qaData";
 
 const AboutPage = () => {
   return (
@@ -50,15 +50,8 @@ const AboutPage = () => {
         </p>
       </div>
 
-      <div className="relative m-auto max-w-[300px] rotate-6 rounded-xl hover:rotate-0 transition-all duration-500">
-        <Image
-          className="box-border border-5 rounded-xl border-slate-700 bg-slate-700 drop-shadow-lg "
-          src={ProfilePicture}
-          alt="Profile picture"
-        />
-
-        {/* For potential "stack" effect - needs container for relative positioning */}
-        {/* <div className="absolute -z-1 top-0 w-full h-full -rotate-6 box-border border-4 rounded-xl border-slate-700 bg-amber-200" /> */}
+      <div className="min-w-[300px] w-full h-min">
+        <Accordion data={qaData} />
       </div>
     </div>
   );

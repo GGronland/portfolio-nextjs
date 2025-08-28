@@ -1,14 +1,13 @@
 "use client";
 
+import { ArrayOfMinLength } from "@/utilities/types";
 import { useEffect, useState } from "react";
-
-type ArrayWithMinLength<T> = [T, T, ...T[]];
 
 // An exercise in manual CSS animations
 // For simplicity, consider pre-existing libraries such as react-spring
 
 const useWordCycler = (
-  wordList: ArrayWithMinLength<string>,
+  wordList: ArrayOfMinLength<string, 2>,
   cycleDelayMS: number = 5000,
   classname: string = "",
   fullStop?: boolean

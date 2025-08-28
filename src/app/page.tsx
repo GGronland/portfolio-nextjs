@@ -7,20 +7,17 @@ import Link from "next/link";
 import Image from "next/image";
 import ProfilePicture from "@/assets/profilePicture.jpg";
 
+const titleList: [string, string, ...string[]] = [
+  "software developer",
+  "quick learner",
+  "sprint deliverer",
+  "question asker",
+  "production deployer",
+  "careful planner",
+];
+
 export default function Home() {
-  let title = useWordCycler(
-    [
-      "software developer",
-      "quick learner",
-      "sprint deliverer",
-      "question asker",
-      "production deployer",
-      "careful planner",
-    ],
-    5000,
-    "animate-fade-in-top",
-    true
-  );
+  let title = useWordCycler(titleList, 5000, "animate-fade-in-top", true);
 
   return (
     <section className="flex flex-col xl:flex-row items-center justify-items-center p-8 pb-20 gap-10 sm:p-20 animate-fade-in-slow">
